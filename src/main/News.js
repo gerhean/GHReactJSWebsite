@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from "./header/Header";
 
 
 function Main(props) {
@@ -9,17 +8,6 @@ function Main(props) {
       To get started, edit <code>src/App.js</code> and save to reload.
     </p>
   );
-}
-
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Header />
-        <Main />
-      </div>
-    );
-  }
 }
 
 export default App;
