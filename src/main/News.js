@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 
 
-function Main(props) {
+function News(props) {
   return (
     <p className="App-intro">
-      To get started, edit <code>src/App.js</code> and save to reload.
+      This is the news page.
     </p>
   );
 }
 
-export default App;
+export default News;
