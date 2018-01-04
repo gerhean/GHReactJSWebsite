@@ -1,13 +1,63 @@
-import React from 'react';
-import logo from './../images/logo.svg';
+import React, { Component } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
+import akuaSound from './akuaCuteSound0.mp3'
+
+function importAll(r) {
+  let images = {};
+  r.keys().map((item, index) => {images[item.replace('./', '')] = r(item); });
+  return images;
+}
+
+const akuas = importAll(require.context('./../images/akua', false, /\.(png|jpe?g|svg)$/));
+
+class AkuaAnimation extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {frame: 1};
+    this.playSound = this.playSound.bind(this);
+    this.audio= new Audio();
+    this.audio.src = akuaSound;
+  }
+  componentDidMount() {
+    this.timerID = setInterval(
+      () => this.tick(),
+      400
+    );
+  }
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+  playSound(){
+    this.audio.play();
+    this.setState({
+      frame:1
+    });
+  }
+  tick() {
+  this.setState(function(prevState, props) {
+    var tickFrame = prevState.frame;
+    if (tickFrame===2){tickFrame=0}
+    else{tickFrame=2};
+    return {
+      frame: tickFrame
+    };
+  });
+  }
+  render() {
+    return (
+      <img onClick={this.playSound} className="akua" src={akuas[('akua0'+this.state.frame+'.png')]} alt="cuteAkua"/>
+    );
+  }
+}
+
+
 
 function Header(props){
     return(
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">Welcome to React</h1>
+        <AkuaAnimation />
+        <h1 className="App-title">Welcome my webpage!</h1>
         <ul>
           <li ><Link className="nav_link" to="/">Home</Link></li>
           <li ><Link className="nav_link" to="/News">News</Link></li>

@@ -44,3 +44,8 @@ li .nav_link:hover {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.akua {
+  width: 80px;
+  height: 80px;
+}

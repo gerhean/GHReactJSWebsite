@@ -7,7 +7,7 @@ function ErrorPage(props) {
   return (
   	<div>
     <p className="App-intro">
-      You wont find anything here.
+      You probably expected a hidden webpage, but
     </p>
     <img src={diaImg} alt="There's nothing here"/>
     </div>
