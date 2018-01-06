@@ -1,3 +1,47 @@
 .App-intro {
   font-size: large;
 }
+
+.AcheiveHead{
+	padding: 50px;
+	font-size: 2.5em;
+}
+
+.AcheiveTbl{
+    margin-left: auto;
+    margin-right: auto;
+    width:100%;
+    text-align:center;
+    font-size: 1.5em;
+    color: #FFFFFF;
+
+}
+
+.AcheiveIntro{
+	padding: 20px; 
+	font-size: 2em;
+	color: #FFFFFF;
+}
+
+.ssStyle{
+	background-color: #0000FF;
+	vertical-align: top; 
+    height:auto; 
+}
+
+.Acheivediv{
+	width:100%;
+	margin-top:20px;
+}
+
+.Acheivep{
+	padding: 10px; 
+	font-size: 1em;
+	color: #FFFFFF;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+}

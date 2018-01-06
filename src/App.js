@@ -5,16 +5,16 @@ import Header from "./header/Header";
 import Home from "./main/Home";
 import About from "./main/About";
 import Contact from "./main/Contact";
-import News from "./main/News";
+import Acheivements from "./main/Acheivements";
 import ErrorPage from "./main/ErrorPage";
 
 function Main(props) {
   return (
     <Switch>
       <Route exact path='/' component={Home}/>
-      <Route exact path='/About' component={About}/>
-      <Route exact path='/News' component={News}/>
-      <Route exact path='/Contact' component={Contact}/>
+      <Route path='/About' component={About}/>
+      <Route path='/Acheivements' component={Acheivements}/>
+      <Route path='/Contact' component={Contact}/>
       <Route path='/' component={ErrorPage}/>
     </Switch>
   );

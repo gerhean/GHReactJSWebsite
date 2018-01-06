@@ -1,3 +1,4 @@
+'use strict';
 import React, { Component } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
@@ -14,7 +15,7 @@ const akuas = importAll(require.context('./../images/akua', false, /\.(png|jpe?g
 class AkuaAnimation extends Component {
   constructor(props) {
     super(props);
-    this.state = {frame: 1};
+    this.state = {frame: 1, pause:false};
     this.playSound = this.playSound.bind(this);
     this.audio= new Audio();
     this.audio.src = akuaSound;
@@ -31,12 +32,14 @@ class AkuaAnimation extends Component {
   playSound(){
     this.audio.play();
     this.setState({
-      frame:1
+      frame:1,
+      pause:true
     });
   }
   tick() {
   this.setState(function(prevState, props) {
     var tickFrame = prevState.frame;
+    if(prevState.pause){return{pause:false}};
     if (tickFrame===2){tickFrame=0}
     else{tickFrame=2};
     return {
@@ -60,7 +63,7 @@ function Header(props){
         <h1 className="App-title">Welcome my webpage!</h1>
         <ul>
           <li ><Link className="nav_link" to="/">Home</Link></li>
-          <li ><Link className="nav_link" to="/News">News</Link></li>
+          <li ><Link className="nav_link" to="/Acheivements">Acheivements</Link></li>
           <li ><Link className="nav_link" to="/Contact">Contact</Link></li>
           <li ><Link className="nav_link" to="/About">About</Link></li>
         </ul>
