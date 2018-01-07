@@ -4,6 +4,7 @@ import './App.css';
 
 function importAll(r) {
   let images = {};
+  // eslint-disable-next-line
   r.keys().map((item, index) => {images[item.replace('./', '')] = r(item); });
   return images;
 };
@@ -52,7 +53,7 @@ class SsSection extends Component{
 		  		<p className="Acheivep">GitHub Links:</p>
 		  		<p className="Acheivep">Final version: <a className="Acheivep" href="https://github.com/leeweijie/socialshield">https://github.com/leeweijie/socialshield</a></p>
 		  		<p className="Acheivep">Development previous versions (includes only client side): <a className="Acheivep" href="https://github.com/gerhean/SocialShield-Dump">https://github.com/gerhean/SocialShield-Dump</a></p>
-		  		<table className="AcheiveTbl">
+		  		<table className="AcheiveTbl"><tbody>
 		  			<tr>
 		    			<td><img src={acheives["Splash.png"]} alt="splash"/></td>
 		    			<td>1st place in Splash Awards 2016 by Singapore Computer Society, the longest running infocomm competition for students in Singapore</td>
@@ -61,7 +62,7 @@ class SsSection extends Component{
 		    			<td><img src={acheives["NCC.jpg"]} alt="splash"/></td>
 		    			<td>Won 1st place in National Infocomm Club (NIC) Face-Off - App Development 2016, which qualified us for APICTA</td>
 		  			</tr>
-					</table>
+					</tbody></table>
         </div>
 
       </div>

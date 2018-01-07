@@ -1,11 +1,11 @@
 'use strict';
 import React, { Component } from 'react';
 import './Header.css';
-import { Link } from 'react-router-dom';
 import akuaSound from './akuaCuteSound0.mp3'
 
 function importAll(r) {
   let images = {};
+  // eslint-disable-next-line
   r.keys().map((item, index) => {images[item.replace('./', '')] = r(item); });
   return images;
 }
@@ -54,18 +54,16 @@ class AkuaAnimation extends Component {
   }
 }
 
-
-
 function Header(props){
     return(
       <header className="App-header">
         <AkuaAnimation />
         <h1 className="App-title">Welcome my webpage!</h1>
         <ul>
-          <li ><Link className="nav_link" to="/">Home</Link></li>
-          <li ><Link className="nav_link" to="/Acheivements">Acheivements</Link></li>
-          <li ><Link className="nav_link" to="/Contact">Contact</Link></li>
-          <li ><Link className="nav_link" to="/About">About</Link></li>
+          <li><a className="nav_link" href="./">Home</a></li>
+          <li><a className="nav_link" href="./#Acheivements">Acheivements</a></li>
+          <li><a className="nav_link" href="./#Contact">Contact</a></li>
+          <li><a className="nav_link" href="./#About">About</a></li>
         </ul>
       </header>
     );
