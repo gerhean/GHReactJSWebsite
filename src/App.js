@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from "./header/Header";
-import Home from "./main/Home";
-import About from "./main/About";
-import Contact from "./main/Contact";
-import Acheivements from "./main/Acheivements";
-import ErrorPage from "./main/ErrorPage";
+import {Home, About, Contact, Acheivements, ErrorPage, Game} from "./main/mainIndex";
 
 class Main extends Component { 
   render(){
@@ -18,6 +14,8 @@ class Main extends Component {
 	      return <Contact />;
 	    case 'About':
 	      return <About />;
+	    case 'Game':
+	      return <Game />;
 	    default:
 	      return <ErrorPage />;
 	  }

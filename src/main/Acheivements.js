@@ -16,12 +16,23 @@ function Acheivements(props) {
   return (
   	<div className="Acheivediv">
   		<h1 className="AcheiveHead">Here are my Acheivements</h1>
-			<SsSection/>
+			<AcheiveCard content="SsSection"/>
+      <br/>
+      <h1>Less impressive stuff I did</h1>
+      <div className="abtTxt">
+      <p>
+      I was once part of my school's infocomm club, but that's to be expected, right?
+      I have participated in the DSTA CDDC and NTU Juniors Defender Camp last year, and 
+      did Google Code-In and Code Jam in 2016 and 2017. As well as the
+      code:XtremeApps Hackerthon in 2016. I have also gotten a Silver for the Singapore infocomm Technology
+      Federation Awards, as well as a Gold for the Bebras Challenge.
+      </p>
+      </div>
   	</div>
   )
 }
 
-class SsSection extends Component{
+class AcheiveCard extends Component{
 	constructor(props) {
     super(props);
     this.state = {open:false};
@@ -43,31 +54,38 @@ class SsSection extends Component{
   render() {
     var contentStyle = { display: this.getContentToggleHeight() };
     return (
-      <div className="ssStyle">
-        <img src={acheives["ssLogo.png"]} alt="sslogo" onClick={this.toggleContent}/>
-
-        <div style={contentStyle}>
-	        <p className="AcheiveIntro">
-		  		Social Shield is data-driven browser plugin to protect users on social media platforms
-		  		</p>
-		  		<p className="Acheivep">GitHub Links:</p>
-		  		<p className="Acheivep">Final version: <a className="Acheivep" href="https://github.com/leeweijie/socialshield">https://github.com/leeweijie/socialshield</a></p>
-		  		<p className="Acheivep">Development previous versions (includes only client side): <a className="Acheivep" href="https://github.com/gerhean/SocialShield-Dump">https://github.com/gerhean/SocialShield-Dump</a></p>
-		  		<table className="AcheiveTbl"><tbody>
-		  			<tr>
-		    			<td><img src={acheives["Splash.png"]} alt="splash"/></td>
-		    			<td>1st place in Splash Awards 2016 by Singapore Computer Society, the longest running infocomm competition for students in Singapore</td>
-		  			</tr>
-		  			<tr>
-		    			<td><img src={acheives["NCC.jpg"]} alt="splash"/></td>
-		    			<td>Won 1st place in National Infocomm Club (NIC) Face-Off - App Development 2016, which qualified us for APICTA</td>
-		  			</tr>
-					</tbody></table>
-        </div>
-
-      </div>
+      <SsSection toggleContent={this.toggleContent} contentStyle={contentStyle}/>
     );
   }
+}
+
+class SsSection extends Component{
+  render(){
+  return(
+  <div className="ssStyle">
+    <img src={acheives["ssLogo.png"]} alt="sslogo" onClick={this.props.toggleContent}/>
+
+    <div style={this.props.contentStyle}>
+      <p className="AcheiveIntro">
+      Social Shield is data-driven browser plugin to protect users on social media platforms
+      </p>
+      <p className="Acheivep">GitHub Links:</p>
+      <p className="Acheivep">Final version: <a className="Acheivep" href="https://github.com/leeweijie/socialshield">https://github.com/leeweijie/socialshield</a></p>
+      <p className="Acheivep">Development previous versions (includes only client side): <a className="Acheivep" href="https://github.com/gerhean/SocialShield-Dump">https://github.com/gerhean/SocialShield-Dump</a></p>
+      <table className="AcheiveTbl"><tbody>
+        <tr>
+          <td><img src={acheives["Splash.png"]} alt="splash"/></td>
+          <td>1st place in Splash Awards 2016 by Singapore Computer Society, the longest running infocomm competition for students in Singapore</td>
+        </tr>
+        <tr>
+          <td><img src={acheives["NCC.jpg"]} alt="splash"/></td>
+          <td>Won 1st place in National Infocomm Club (NIC) Face-Off - App Development 2016, which qualified us for APICTA</td>
+        </tr>
+      </tbody></table>
+    </div>
+
+  </div>
+  )}
 }
 
 export default Acheivements;
