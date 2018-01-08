@@ -16,9 +16,6 @@ function Home(props) {
     <br/>
     <h3>Well that's enough talk I guess</h3>
     <h3>If you ever need anything, please don't hesitate in sending an email:) Thanks!</h3>
-  	<br/>
-  	<p>Also, /#Game</p>
-  	<p>Just a little Easter Egg</p>
     </div>
   );
 }
