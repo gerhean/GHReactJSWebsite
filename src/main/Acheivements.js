@@ -15,7 +15,7 @@ const acheives = importAll(require.context('./../images/AcheivePics', false, /\.
 function Acheivements(props) {
   return (
   	<div className="Acheivediv">
-  		<h1 className="AcheiveHead">Here are my Acheivements</h1>
+  		<h1 className="AcheiveHead">Here are my Acheivements (before I entered University that is).</h1>
 			<AcheiveCard content="SsSection"/>
       <br/>
       <h1>Less impressive stuff I did</h1>
